@@ -1,12 +1,11 @@
 <h1>Your favorite Blog</h1>
 <ul>
-    <li>
-        <p>Hey hey</p>
-    </li>
-
+  
   <% @posts.each do |post| %>
     <li>
+    <a href="/articles/<%= post.id %>">
       <%= post.title %>
+    </a>
     </li>
   <% end %>
 </ul>
