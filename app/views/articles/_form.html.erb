@@ -1,5 +1,5 @@
 
-<%= form_with scope: :articles, url: articles_path, local: true do |form| %>
+<%= form_with scope: :articles, url: articles_path, html:{multipart: true}, local: true do |form| %>
   <div class="form-control">
     <%= form.label :title %><br>
     <%= form.text_field :title %>
@@ -22,6 +22,9 @@
     <% @article.errors.full_messages_for(:body).each do |message| %>
         <div><%= message %></div>
       <% end %>
+  </div>
+  <div class="form-group">
+    <%= form.file_field :image %>
   </div>
 
   <div class="form-control">
