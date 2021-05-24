@@ -3,7 +3,7 @@
     <li>
         <p>Hey hey</p>
     </li>
-    # Heroku doesn't see erb commands !!
+
   <% @posts.each do |post| %>
     <li>
       <%= post.title %>
@@ -11,8 +11,3 @@
   <% end %>
 </ul>
 
-# git add .
-# git commit -am ""
-# git push heroku master 
-# heroku run rails db:migrate
-# heroku open
