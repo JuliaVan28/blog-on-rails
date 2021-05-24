@@ -1,23 +1,22 @@
 class ArticlesController < ApplicationController
   def index
-    @posts = Post.all
+    @articles = Post.all
   end
 
   def show 
-    @post = Post.find(params[:id])
+    @article = Post.find(params[:id])
   end
 
   def new
-    @post = Post.new
+    @article = Post.new
   end
 
   def create
-    @post = Post.new(post_params)
-
-    if @post.save
-      redirect_to @post
+    @article = Post.new(post_params)
+    if @article.save
+      redirect_to articles_path({:id => @article.id})
     else
-      render :new.html.erb
+      render :new
     end
   end
 

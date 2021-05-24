@@ -1,10 +1,10 @@
 <h1>Your favorite Blog</h1>
 <ul>
   
-  <% @posts.each do |post| %>
+  <% @articles.each do |article| %>
     <li>
-    <a href="/articles/<%= post.id %>">
-      <%= post.title %>
+    <a href="/articles/<%= article.id %>">
+      <%= article.title %>
     </a>
     
     
