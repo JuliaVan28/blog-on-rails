@@ -11,6 +11,7 @@ import "bootstrap";
 import "../stylesheets/application";
 import "../stylesheets/articles";
 import "../stylesheets/main";
+import "../stylesheets/tags";
 
 Rails.start()
 Turbolinks.start()

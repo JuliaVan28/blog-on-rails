@@ -23,6 +23,13 @@
         <div><%= message %></div>
       <% end %>
   </div>
+
+  <br/>
+  <div class="form-group">
+  <%= form.label :all_tags %>
+  <%= form.text_field :all_tags, class: 'form-control' %>
+  </div>
+
   <br/>
   <div class="form-group">
     <%= form.file_field :image, class: 'form-control' %>

@@ -12,6 +12,9 @@
     <%= image_tag article.image.url(:thumb), class: 'img-thumbnail thumb' if article.image? %>
     <%= article.summary %>
   </section>
+  <section class="footer-summary">
+    <%= raw article.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'tag tag-primary' }.join(' ') %>
+  </section>
 </article>
 <% end %>
 
