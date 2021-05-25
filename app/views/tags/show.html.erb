@@ -4,4 +4,25 @@
   <h2>No posts yet</h2>
 <% else %>
   <%= render @tag.posts %>
+  
+  <% @tag.posts.each do |t| %>
+  
+    <article class="post">
+      <section class="post-head">
+      
+      <a href="/articles/<%= t.id %>">
+        <%= t.title %>
+      </a>
+      </section>
+    
+      <section class="post-summary clearfix">
+        <%= image_tag t.image.url(:thumb), class: 'img-thumbnail thumb' if t.image? %>
+        <%= t.summary %>
+      </section>
+      <section class="footer-summary">
+        <%= raw t.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'tag tag-primary' }.join(' ') %>
+      </section>
+    </article>
+    <% end %>
+    
 <% end %>

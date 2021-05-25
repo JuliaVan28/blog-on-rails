@@ -38,6 +38,24 @@ class ArticlesController < ApplicationController
 
     redirect_to root_path
   end
+
+  def search
+    # @article = Post.where("title LIKE :search", search: params[:q])
+    # if params[:search].blank?  
+    #   redirect_to(root_path) and return  
+    # else  
+    #   @parameter = params[:search].downcase  
+    #   @articles = Post.all.where("lower(title) LIKE :search", search: @parameter)  
+    # end  
+  
+      if params[:search].blank?  
+        redirect_to(root_path, alert: "Empty field!") and return  
+      else  
+        @parameter = params[:search].downcase  
+        @results = Post.all.where("lower(title) LIKE :search", search: @parameter)  
+      end  
+  end 
+
   def set_post
     @article = Post.find(params[:id])
   end

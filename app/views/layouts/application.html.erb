@@ -25,6 +25,10 @@
 <%= link_to 'New Post', new_article_path %>
  </button>
 
+ 
+  
+
+
  <ul class="navbar-nav pull-xs-right">
     <% if user_signed_in? %>
         <li class="nav-item">
@@ -43,6 +47,17 @@
 
  <div class = "container">
  <h1 class = "theTitle">Your favorite Blog</h1>
+
+
+<%= form_tag(search_article_path, :method => "get",   
+    class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+     
+      <%= button_tag "", :class => 'btn btn-primary mb-2',:name => nil%>  
+      
+  </div>  
+<% end %>
 
  <div class="row">
         <div class="col-md-12">
