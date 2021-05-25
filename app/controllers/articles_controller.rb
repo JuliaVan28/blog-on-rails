@@ -26,8 +26,9 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Post.find(params[:id])
+    @article.assign_attributes(post_params)
 
-    if @article.update(post_params)
+    if @article.save
       redirect_to articles_path({:id => @article.id})
     else
       render :edit

@@ -1,15 +1,20 @@
-
-<ul>
+<% @articles.each do |article| %>
   
-  <% @articles.each do |article| %>
-    <li>
-    <a href="/articles/<%= article.id %>">
-      <%= article.title %>
-    </a>
-    
-    
-    </li>
-  <% end %>
-</ul>
+<article class="post">
+  <section class="post-head">
+  
+  <a href="/articles/<%= article.id %>">
+    <%= article.title %>
+  </a>
+  </section>
+
+  <section class="post-summary clearfix">
+    <%= image_tag article.image.url(:thumb), class: 'img-thumbnail thumb' if article.image? %>
+    <%= article.summary %>
+  </section>
+</article>
+<% end %>
+
+
 
 

@@ -1,5 +1,4 @@
 <h1><%= @article.title %></h1>
-<p><%= @article.summary %></p>
 <p><%= @article.body %></p>
 <br/>
 <button type="button" class="btn btn-outline-success">
@@ -7,7 +6,7 @@
  </button>
 
 
- <button type="button" class="btn btn-outline-success">
+ <button type="button" class="btn btn-outline-danger">
 <%= link_to 'Delete Post', article_path(@article),
                             method: :delete,
                             data: {confirm: "Do you understand that you are deleting this gorgeous post??"} %>
