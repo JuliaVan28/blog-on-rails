@@ -50,11 +50,11 @@
 
 
 <%= form_tag(search_article_path, :method => "get",   
-    class: 'navbar-form navbar-left') do %>  
+    class: 'navbar-form mx-sm-3 mb-2') do %>  
   <div class="input-group">  
     <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
      
-      <%= button_tag "", :class => 'btn btn-primary mb-2',:name => nil%>  
+      <%= button_tag "Search", :class => 'btn btn-primary mb-2',:name => nil%>  
       
   </div>  
 <% end %>
