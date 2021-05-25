@@ -32,6 +32,7 @@ gem 'bootstrap', '~> 5.0.1'
 
 gem 'carrierwave', '~> 2.0'
 gem "mini_magick"
+gem 'devise'
 
 group :production do
   gem'pg'
@@ -52,6 +53,7 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem "letter_opener"
 end
 
 group :test do

@@ -1,5 +1,12 @@
-<h1><%= @article.title %></h1>
-<p><%= @article.body %></p>
+<article class="post">
+  <section class="post-head ">
+        <h1 class = "text-center"><%= @article.title %></h1>
+    </section>
+
+<section class="post-body">
+    <%= image_tag @article.image.url(:large), class: 'img-show' if @article.image? %>
+    <%= @article.body.html_safe %>
+</section>
 <br/>
 <button type="button" class="btn btn-outline-success">
 <%= link_to 'Edit Post', edit_article_path(@article) %>
@@ -12,5 +19,6 @@
                             data: {confirm: "Do you understand that you are deleting this gorgeous post??"} %>
  </button>
  <br/>
+ </article>
 
 
