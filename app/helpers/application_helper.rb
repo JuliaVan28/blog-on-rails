@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include Pagy::Frontend
     def bootstrap_class_for(name)
         { success:"alert-success",
           error:  "alert-danger",

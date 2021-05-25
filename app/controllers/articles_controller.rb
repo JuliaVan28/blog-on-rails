@@ -1,7 +1,9 @@
 class ArticlesController < ApplicationController
+   include Pagy::Backend
+
   before_action :set_post, only: [ :show, :edit, :update, :destroy ]
   def index
-    @articles = Post.all
+   @pagy, @articles = pagy(Post.all)
   end
 
   def show 

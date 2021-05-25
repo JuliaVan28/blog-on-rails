@@ -33,7 +33,7 @@ gem 'bootstrap', '~> 5.0.1'
 gem 'carrierwave', '~> 2.0'
 gem "mini_magick"
 gem 'devise'
-
+gem 'pagy'
 group :production do
   gem'pg'
 end

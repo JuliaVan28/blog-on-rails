@@ -7,9 +7,15 @@ require "rails/all"
 Bundler.require(*Rails.groups)
 require 'carrierwave'
 require 'carrierwave/orm/activerecord'
+require 'pagy'
+require 'pagy/extras/bootstrap'
 
 module Railsapp
   class Application < Rails::Application
+    include Pagy::Backend
+    helpers do
+      include Pagy::Frontend
+    end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
