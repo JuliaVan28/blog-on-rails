@@ -43,7 +43,6 @@ class ArticlesController < ApplicationController
   end
   private
     def post_params
-      params.require(:articles).permit(:title, :summary, :body, :image)
       params.require(:articles).permit(:title, :summary, :body, :image, :all_tags)
     end
 end
