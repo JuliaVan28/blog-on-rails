@@ -15,7 +15,7 @@
   <br/>
   
   <div class = "container">
-    <nav class = "navbar navbar-light bg-faded">
+    <nav class = "navbar navbar-light" style="background-color: #cb9ff5; ">
       <ul class = "nav navbar-nav">
         <li class ="nav-item active">
         <a class = "nav-link" href = "<%= articles_path %>">Main Page</a>
@@ -29,7 +29,7 @@
   
 
 
- <ul class="navbar-nav pull-xs-right">
+ <ul class="navbar-nav pull-xs-right navbar-light" style="background-color: #cb9ff5;">
     <% if user_signed_in? %>
         <li class="nav-item">
             <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
@@ -71,9 +71,11 @@
  </div>
 
  <div class="row">
+      
         <div class="col-md-9">
           <%= yield %>
         </div>
+        <h2>Tags</h2>
         <div class="col-md-4">
         <% tag_cloud(Tag.counts, %w{tag1 tag2 tag3 tag4 tag5}) do |tag, css_class| %>
           <%= link_to tag.name, tag_path(tag.name), class: css_class %>

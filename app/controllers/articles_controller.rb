@@ -1,9 +1,11 @@
 class ArticlesController < ApplicationController
    include Pagy::Backend
 
+   before_action :authenticate_user!, except: [:index, :show]
+
   before_action :set_post, only: [ :show, :edit, :update, :destroy ]
   def index
-   @pagy, @articles = pagy(Post.all)
+   @pagy, @articles = pagy(Post.all, items: 5)
   end
 
   def show 
@@ -17,7 +19,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Post.new(post_params)
     if @article.save
-      redirect_to articles_path({:id => @article.id})
+      redirect_to articles_path({:id => @article.id}), success: 'Successfully uploaded'
     else
       render :new
     end
@@ -29,7 +31,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Post.find(params[:id])
     if @article.update_attributes(post_params)
-      redirect_to articles_path({:id => @article.id})
+      redirect_to articles_path({:id => @article.id}), success: 'Successfully updated'
     else
       render :edit
     end
