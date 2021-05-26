@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+BLOG ON RAILS
 
-Things you may want to cover:
+What is done:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- getting started
+- authentication 
+- authorization 
+- image uploading
+- filtering by tags
+- searching posts by title
+- comments
+- likes(reactions)
+- deployment on heroku (https://mighty-island-35899.herokuapp.com/)
+- pagination
